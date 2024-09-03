@@ -95,7 +95,7 @@
             align-items: center;
             gap: 1rem;
             max-width: 100%;
-            height: 500px;
+            height: auto;
         }
 
         .info {
@@ -109,7 +109,7 @@
         #sub-text {
             font-size: 30px;
             margin-bottom: 1.5rem;
-            text-align: right;
+            text-align: center;
             color: #1a1a1a;
         }
 
@@ -135,9 +135,30 @@
             box-shadow: 0 0 10px 4px #2e6ec2;
         }
 
+        .video-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-top: 1rem;
+        }
+
+        .video-container h3 {
+            margin: 0 auto;
+            font-size: 2rem;
+            color: #333399;
+            text-shadow: 0 0 1px #FF6600;
+        }
+
         .ytube {
-            height: 70%;
+            display: flex;
+            justify-content: end;
+            width: 50%;
+            height: auto;
+        }
+
+        .ytube iframe {
             width: 70%;
+            height: 15rem;
         }
 
         .features {
@@ -210,11 +231,42 @@
             .features {
                 margin-top: 1rem;
             }
+
+            .ytube {
+                width: 60%;
+                margin-left: 0;
+            }
+
+            .phone-cont {
+                position: static;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-top: 1rem;
+            }
+
+            .video-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .video-container h3 {
+                margin-bottom: 0.5rem;
+                text-align: center;
+            }
+
+            .ytube iframe {
+                width: 100%;
+            }
         }
 
         @media (max-width: 480px) {
             h1 {
                 font-size: 1.5rem;
+            }
+
+            #sub-text {
+                text-align: center;
             }
 
             .main-info {
@@ -240,7 +292,7 @@
             alt="alcatel logo">
         <nav>
             <a href="#home">Home</a>
-            <a href="#features">Features</a>
+            <a href="#features">Information</a>
             <a href="#ringtones">Ringtones</a>
             <a href="#text-sim">Text Simulator</a>
         </nav>
@@ -252,11 +304,14 @@
                 <h1>Alcatel One Touch Easy</h1>
                 <h2 id="sub-text">A classic phone, with a cute design, and lots of colours</h2>
             </div>
-            <div class="ytube">
-                <iframe width="426" height="239" src="https://www.youtube.com/embed/Vjzy2g_fDrA"
-                    title="Alcatel One touch easy Werbung 1998" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="video-container">
+                <h3>Original Advert from 1998</h3>
+                <div class="ytube">
+                    <iframe src="https://www.youtube.com/embed/Vjzy2g_fDrA"
+                        title="Alcatel One touch easy Werbung 1998" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
             </div>
             <div class="features">
                 <ul>
