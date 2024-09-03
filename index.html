@@ -259,8 +259,41 @@
             background-color: rgba(145, 133, 133, 0.3);
             color: #272a27;
             font-weight: bold;
-            box-shadow: 0 0 2px 2px #f8f1d2;
+            box-shadow: 0 0 2px 2px;
             text-shadow: 0 0 3px 3px #f8f1d2;
+        }
+
+        .up-arrow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            margin-top: 1rem;
+            transition: all 0.35s ease-in-out;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .up-arrow:hover {
+            background-color: #FF6600;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .up-arrow svg {
+            width: 3rem;
+            height: 3rem;
+            fill: #000;
+            transition: all 0.35s ease-in-out;
+        }
+
+        .up-arrow:hover svg {
+            fill: #272a27;
         }
 
         /* Responsive styles */
@@ -386,7 +419,6 @@
                 font-size: 0.6rem;
             }
         }
-
     </style>
 </head>
 
@@ -501,6 +533,12 @@
             </div>
         </div>
     </section>
+    <a href="#home" class="up-arrow" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+            <path
+                d="m296-224-56-56 240-240 240 240-56 56-184-183-184 183Zm0-240-56-56 240-240 240 240-56 56-184-183-184 183Z" />
+        </svg>
+    </a>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const buttons = document.querySelectorAll('.keypad button');
