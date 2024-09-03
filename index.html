@@ -106,17 +106,11 @@
             height: 100%;
         }
 
-        #sub-text {
+        h2 {
             font-size: 30px;
             margin-bottom: 1.5rem;
             text-align: center;
             color: #1a1a1a;
-        }
-
-        h2 {
-            font-size: 24px;
-            margin-bottom: 6rem;
-            text-indent: 1.5rem;
         }
 
         .phone-cont {
@@ -194,6 +188,79 @@
         .features ul li .feature-value {
             font-size: 0.9em;
             color: #444;
+        }
+
+        .phone {
+            width: 20rem;
+            height: auto;
+            background-color: #ede20a;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 50px auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .screen {
+            width: 100%;
+            height: 6rem;
+            background-color: #bebb90;
+            color: rgb(47, 56, 47);
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: left;
+            font-family: "Courier New", Courier, monospace;
+            box-sizing: border-box;
+        }
+
+        .keypad {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 10px;
+            background-color: rgba(145, 133, 133, 0.3);
+            color: #272a27;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+            box-shadow: 0 0 2px 2px #f8f1d2;
+            text-shadow: 0 0 3px 3px #f8f1d2;
+        }
+
+        button:active {
+            background-color: rgba(231, 200, 165, 0.3);
+            box-shadow: 0 0 3px 5px #f8f1d2;
+            text-shadow: 0 0 3px 3px #f8f1d2;
+        }
+
+        .num {
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .charch {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+        }
+
+        #send {
+            grid-column: 1 / -1;
+            background-color: rgba(145, 133, 133, 0.3);
+            color: #272a27;
+            font-weight: bold;
+            box-shadow: 0 0 2px 2px #f8f1d2;
+            text-shadow: 0 0 3px 3px #f8f1d2;
         }
 
         /* Responsive styles */
@@ -282,7 +349,44 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .ytube {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .phone {
+                width: 90%;
+                padding: 10px;
+                margin: 20px auto;
+            }
+
+            .screen {
+                height: 5rem;
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+
+            .keypad {
+                gap: 5px;
+            }
+
+            button {
+                padding: 5px;
+                font-size: 16px;
+                height: 50px;
+            }
+
+            .num {
+                font-size: 1.2rem;
+                margin-bottom: 0.2rem;
+            }
+
+            .charch {
+                font-size: 0.6rem;
+            }
         }
+
     </style>
 </head>
 
@@ -307,8 +411,8 @@
             <div class="video-container">
                 <h3>Original Advert from 1998</h3>
                 <div class="ytube">
-                    <iframe src="https://www.youtube.com/embed/Vjzy2g_fDrA"
-                        title="Alcatel One touch easy Werbung 1998" frameborder="0"
+                    <iframe src="https://www.youtube.com/embed/Vjzy2g_fDrA" title="Alcatel One touch easy Werbung 1998"
+                        frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
@@ -347,9 +451,110 @@
     </section>
     <!-- Text Simulator -->
     <section id="text-sim">
-        <h2>Text Simulator</h2>
-        <p>Get in touch with us for more information...</p>
+        <h2>Try out texting from the 90's</h2>
+        <div class="phone">
+            <div id="display" class="screen"></div>
+            <div class="keypad">
+                <button data-chars="1">1</button>
+                <button data-chars="ABC2">
+                    <span class="num">2</span>
+                    <span class="charch">ABC</span>
+                </button>
+                <button data-chars="DEF3">
+                    <span class="num">3</span>
+                    <span class="charch">DEF</span>
+                </button>
+                <button data-chars="GHI4">
+                    <span class="num">4</span>
+                    <span class="charch">GHI</span>
+                </button>
+                <button data-chars="JKL5">
+                    <span class="num">5</span>
+                    <span class="charch">JKL</span>
+                </button>
+                <button data-chars="MNO6">
+                    <span class="num">6</span>
+                    <span class="charch">MNO</span>
+                </button>
+                <button data-chars="PQRS7">
+                    <span class="num">7</span>
+                    <span class="charch">PQRS</span>
+                </button>
+                <button data-chars="TUV8">
+                    <span class="num">8</span>
+                    <span class="charch">TUV</span>
+                </button>
+                <button data-chars="WXYZ9">
+                    <span class="num">9</span>
+                    <span class="charch">WXYZ</span>
+                </button>
+                <button data-chars="*">
+                    <span class="num">*</span>
+                </button>
+                <button data-chars=" 0">
+                    <span class="num">0</span>
+                    <span class="charch">___</span>
+                </button>
+                <button data-chars="#">#</button>
+                <button id="backspace">⟵</button>
+                <button id="send">Send</button>
+            </div>
+        </div>
     </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.keypad button');
+            const display = document.getElementById('display');
+            const sendButton = document.getElementById('send');
+            let lastKey = null;
+            let lastTime = 0;
+            let charIndex = 0;
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    if (button.id === 'backspace') {
+                        // Handle backspace functionality
+                        display.textContent = display.textContent.slice(0, -1);
+                        return;
+                    }
+
+                    if (button.id === 'send') {
+                        // Send button functionality is handled separately
+                        return;
+                    }
+
+                    const now = Date.now();
+                    const chars = button.getAttribute('data-chars');
+
+                    if (lastKey === button && now - lastTime < 800) {
+                        // Cycle through the characters
+                        charIndex = (charIndex + 1) % chars.length;
+                    } else {
+                        // Start with the first character
+                        charIndex = 0;
+                    }
+
+                    const currentChar = chars[charIndex];
+                    if (display.textContent.length > 0 && lastKey === button && now - lastTime <
+                        800) {
+                        // Replace the last character
+                        display.textContent = display.textContent.slice(0, -1) + currentChar;
+                    } else {
+                        // Add a new character
+                        display.textContent += currentChar;
+                    }
+
+                    lastKey = button;
+                    lastTime = now;
+                });
+            });
+
+            sendButton.addEventListener('click', () => {
+                // Clear the display when Send is clicked
+                display.textContent = '';
+            });
+        });
+    </script>
 </body>
 
 <footer>
