@@ -190,10 +190,120 @@
             color: #444;
         }
 
+        .audio-container {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+
         .audio-player {
-            display: grid;
+            display: inline-grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
+            height: 20rem;
+            gap: 1.5rem 1rem;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .audio-label {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0.5rem;
+        }
+
+        .audio-label p {
+            margin-left: 1rem;
+        }
+
+        #btn-1 {
+            background-image: linear-gradient(to bottom right, #56C596, #7BE495, #CFF4D2);
+            border-radius: 50px;
+        }
+
+        #btn-1:hover {
+            background-image: linear-gradient(to top left, #ffffff, #D1D1D1, #9B9B9B);
+            border-radius: 50px;
+        }
+
+        #btn-2 {
+            background-image: linear-gradient(to bottom right, #FA897B, #FFDD94, #86E3CE);
+            border-radius: 50px;
+        }
+
+        #btn-2:hover {
+            background-image: linear-gradient(to top left, #ffffff, #D1D1D1, #9B9B9B);
+            border-radius: 50px;
+        }
+
+        #btn-3 {
+            background-image: linear-gradient(to bottom right, #CCABD8, #86E3CE);
+            border-radius: 50px;
+        }
+
+        #btn-3:hover {
+            background-image: linear-gradient(to top left, #ffffff, #D1D1D1, #9B9B9B);
+            border-radius: 50px;
+        }
+
+        #btn-4 {
+            background-image: linear-gradient(to bottom right, #D7E3EE, #ABD1DC, #7097A8);
+            border-radius: 50px;
+        }
+
+        #btn-4:hover {
+            background-image: linear-gradient(to top left, #ffffff, #D1D1D1, #9B9B9B);
+            border-radius: 50px;
+        }
+
+        #btn-5 {
+            background-image: linear-gradient(to bottom right, #C73866, #FD8F52, #FFDCA2);
+            border-radius: 50px;
+        }
+
+        #btn-5:hover {
+            background-image: linear-gradient(to top left, #ffffff, #D1D1D1, #9B9B9B);
+            border-radius: 50px;
+        }
+
+        #btn-6 {
+            background-image: linear-gradient(to bottom right, #FE676E, #FFDCA2);
+            border-radius: 50px;
+        }
+
+        #btn-6:hover {
+            background-image: linear-gradient(to top left, #ffffff, #D1D1D1, #9B9B9B);
+            border-radius: 50px;
+        }
+
+        #btn-7 {
+            background-image: linear-gradient(to bottom right, #E8B7D4, #7FACD6);
+            border-radius: 50px;
+        }
+
+        #btn-7:hover {
+            background-image: linear-gradient(to top left, #ffffff, #D1D1D1, #9B9B9B);
+            border-radius: 50px;
+        }
+
+        #btn-8 {
+            background-image: linear-gradient(to bottom right, #35BBCA, #D3DD18, #F8D90F);
+            border-radius: 50px;
+        }
+
+        #btn-8:hover {
+            background-image: linear-gradient(to top left, #ffffff, #D1D1D1, #9B9B9B);
+            border-radius: 50px;
+        }
+
+        #btn-9 {
+            background-image: linear-gradient(to bottom right, #7BE495, #329D9C);
+            border-radius: 50px;
+        }
+
+        #btn-9:hover {
+            background-image: linear-gradient(to top left, #ffffff, #D1D1D1, #9B9B9B);
+            border-radius: 50px;
         }
 
         .play-btn {
@@ -502,105 +612,89 @@
     <section id="ringtones">
         <h2>Ringtones</h2>
         <p>Try one of the ringtones that defined an era...</p>
-        <div class="audio-player">
-            <div>
-                <a href="" id="btn-1">
+        <div class="audio-container">
+            <div class="audio-player">
+                <div class="audio-label">
                     <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/141/967/original/play-button-svgrepo-com.png?1725373347"
-                        class="play-btn" alt="play button">
-                </a>
-                <audio class="listen" preload="none"
-                    src="https://www.mobiles24.co/metapreview.php?id=642179&amp;cat=3&amp;h=13806849" data-dlid="642179"
-                    data-gacat="sm" id="audio2">
-                </audio>
-                <p>Classic</p>
-            </div>
-            <div>
-                <a href="" id="btn-2">
+                        class="play-btn" id="btn-1" alt="play button">
+                    <audio class="listen" preload="none"
+                        src="https://www.mobiles24.co/metapreview.php?id=642179&amp;cat=3&amp;h=13806849"
+                        data-dlid="642179" data-gacat="sm" id="audio2">
+                    </audio>
+                    <p>Classic</p>
+                </div>
+                <div class="audio-label">
                     <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/141/967/original/play-button-svgrepo-com.png?1725373347"
-                        class="play-btn" alt="play button">
-                </a>
-                <audio class="listen" preload="none"
-                    src="https://www.mobiles24.co/metapreview.php?id=642184&amp;cat=3&amp;h=13806956" data-dlid="642184"
-                    data-gacat="sm" id="audio7">
-                </audio>
-                <p>Mosquito</p>
-            </div>
-            <div>
-                <a href="" id="btn-3">
+                        class="play-btn" id="btn-2" alt="play button">
+                    <audio class="listen" preload="none"
+                        src="https://www.mobiles24.co/metapreview.php?id=642184&amp;cat=3&amp;h=13806956"
+                        data-dlid="642184" data-gacat="sm" id="audio7">
+                    </audio>
+                    <p>Mosquito</p>
+                </div>
+                <div class="audio-label">
                     <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/141/967/original/play-button-svgrepo-com.png?1725373347"
-                        class="play-btn" alt="play button">
-                </a>
-                <audio class="listen" preload="none"
-                    src="https://www.mobiles24.co/metapreview.php?id=642171&amp;cat=3&amp;h=13806677" data-dlid="642171"
-                    data-gacat="sm" id="audio9">
-                </audio>
-                <p>Badinerie</p>
-            </div>
-            <div>
-                <a href="" id="btn-4">
+                        class="play-btn" id="btn-3" alt="play button">
+                    <audio class="listen" preload="none"
+                        src="https://www.mobiles24.co/metapreview.php?id=642171&amp;cat=3&amp;h=13806677"
+                        data-dlid="642171" data-gacat="sm" id="audio9">
+                    </audio>
+                    <p>Badinerie</p>
+                </div>
+                <div class="audio-label">
                     <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/141/967/original/play-button-svgrepo-com.png?1725373347"
-                        class="play-btn" alt="play button">
-                </a>
-                <audio class="listen" preload="none"
-                    src="https://www.mobiles24.co/metapreview.php?id=642199&amp;cat=3&amp;h=13807279" data-dlid="642199"
-                    data-gacat="sm" id="audio24">
-                </audio>
-                <p>Classic 2</p>
-            </div>
-            <div>
-                <a href="" id="btn-5">
+                        class="play-btn" id="btn-4" alt="play button">
+                    <audio class="listen" preload="none"
+                        src="https://www.mobiles24.co/metapreview.php?id=642199&amp;cat=3&amp;h=13807279"
+                        data-dlid="642199" data-gacat="sm" id="audio24">
+                    </audio>
+                    <p>Classic 2</p>
+                </div>
+                <div class="audio-label">
                     <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/141/967/original/play-button-svgrepo-com.png?1725373347"
-                        class="play-btn" alt="play button">
-                </a>
-                <audio class="listen" preload="none"
-                    src="https://www.mobiles24.co/metapreview.php?id=642195&amp;cat=3&amp;h=13807193" data-dlid="642195"
-                    data-gacat="sm" id="audio20">
-                </audio>
-                <p>Improvisation</p>
-            </div>
-            <div>
-                <a href="" id="btn-6">
+                        class="play-btn" id="btn-5" alt="play button">
+                    <audio class="listen" preload="none"
+                        src="https://www.mobiles24.co/metapreview.php?id=642195&amp;cat=3&amp;h=13807193"
+                        data-dlid="642195" data-gacat="sm" id="audio20">
+                    </audio>
+                    <p>Improvisation</p>
+                </div>
+                <div class="audio-label">
                     <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/141/967/original/play-button-svgrepo-com.png?1725373347"
-                        class="play-btn" alt="play button">
-                </a>
-                <audio class="listen" preload="none"
-                    src="https://www.mobiles24.co/metapreview.php?id=642191&amp;cat=3&amp;h=13807107" data-dlid="642191"
-                    data-gacat="sm" id="audio16">
-                </audio>
-                <p>Kick</p>
-            </div>
-            <div>
-                <a href="" id="btn-7">
+                        class="play-btn" id="btn-6" alt="play button">
+                    <audio class="listen" preload="none"
+                        src="https://www.mobiles24.co/metapreview.php?id=642191&amp;cat=3&amp;h=13807107"
+                        data-dlid="642191" data-gacat="sm" id="audio16">
+                    </audio>
+                    <p>Kick</p>
+                </div>
+                <div class="audio-label">
                     <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/141/967/original/play-button-svgrepo-com.png?1725373347"
-                        class="play-btn" alt="play button">
-                </a>
-                <audio class="listen" preload="none"
-                    src="https://www.mobiles24.co/metapreview.php?id=649948&amp;cat=3&amp;h=13973882" data-dlid="649948"
-                    data-gacat="sm" id="audio8">
-                </audio>
-                <p>Intro</p>
-            </div>
-            <div>
-                <a href="" id="btn-8">
+                        class="play-btn" id="btn-7" alt="play button">
+                    <audio class="listen" preload="none"
+                        src="https://www.mobiles24.co/metapreview.php?id=649948&amp;cat=3&amp;h=13973882"
+                        data-dlid="649948" data-gacat="sm" id="audio8">
+                    </audio>
+                    <p>Intro</p>
+                </div>
+                <div class="audio-label">
                     <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/141/967/original/play-button-svgrepo-com.png?1725373347"
-                        class="play-btn" alt="play button">
-                </a>
-                <audio class="listen" preload="none"
-                    src="https://www.mobiles24.co/metapreview.php?id=651667&amp;cat=3&amp;h=14010841" data-dlid="651667"
-                    data-gacat="sm" id="audio0">
-                </audio>
-                <p>Classic 3</p>
-            </div>
-            <div>
-                <a href="" id="btn-9">
+                        class="play-btn" id="btn-8" alt="play button">
+                    <audio class="listen" preload="none"
+                        src="https://www.mobiles24.co/metapreview.php?id=651667&amp;cat=3&amp;h=14010841"
+                        data-dlid="651667" data-gacat="sm" id="audio0">
+                    </audio>
+                    <p>Classic 3</p>
+                </div>
+                <div class="audio-label">
                     <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/141/967/original/play-button-svgrepo-com.png?1725373347"
-                        class="play-btn" alt="play button">
-                </a>
-                <audio class="listen" preload="none"
-                    src="https://www.mobiles24.co/metapreview.php?id=650257&amp;cat=3&amp;h=13980526" data-dlid="650257"
-                    data-gacat="sm" id="audio21">
-                </audio>
-                <p>Fairie</p>
+                        class="play-btn" id="btn-9" alt="play button">
+                    <audio class="listen" preload="none"
+                        src="https://www.mobiles24.co/metapreview.php?id=650257&amp;cat=3&amp;h=13980526"
+                        data-dlid="650257" data-gacat="sm" id="audio21">
+                    </audio>
+                    <p>Fairie</p>
+                </div>
             </div>
         </div>
     </section>
@@ -670,7 +764,7 @@
     </a>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const playButtons = document.querySelectorAll('.audio-player a');
+            const playButtons = document.querySelectorAll('.audio-player img');
 
             playButtons.forEach(button => {
                 button.addEventListener('click', (e) => {
