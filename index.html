@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alcatel One Touch Easy, fan page">
+    <meta name="keywords" content="Alcatel, OT easy, One Touch Easy, SheCodes, one page challenge">
     <title>Alcatel OT Easy | SheCodes One Page Challenge</title>
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#128222;</text></svg>">
@@ -445,6 +447,13 @@
         .up-arrow:hover svg {
             fill: #272a27;
         }
+
+        footer {
+            text-align: center;
+            padding: 0.6rem;
+            margin: 0.3rem;
+        }
+
         /* Responsive styles */
         @media (max-width: 768px) {
             nav {
@@ -834,108 +843,110 @@
                 d="m296-224-56-56 240-240 240 240-56 56-184-183-184 183Zm0-240-56-56 240-240 240 240-56 56-184-183-184 183Z" />
         </svg>
     </a>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const audioLabels = document.querySelectorAll('.audio-label');
-
-            audioLabels.forEach(label => {
-                const playBtn = label.querySelector('.play-btn');
-                const pauseBtn = label.querySelector('.pause-btn');
-                const audio = label.querySelector('audio');
-
-                playBtn.addEventListener('click', () => toggleAudio(playBtn, pauseBtn, audio));
-                pauseBtn.addEventListener('click', () => toggleAudio(playBtn, pauseBtn, audio));
-
-                audio.addEventListener('ended', () => resetButtons(playBtn, pauseBtn));
-            });
-
-            function toggleAudio(playBtn, pauseBtn, audio) {
-                if (audio.paused) {
-                    audio.play();
-                    playBtn.classList.add('hidden');
-                    pauseBtn.classList.remove('hidden');
-                } else {
-                    audio.pause();
-                    resetButtons(playBtn, pauseBtn);
-                }
-            }
-
-            function resetButtons(playBtn, pauseBtn) {
-                playBtn.classList.remove('hidden');
-                pauseBtn.classList.add('hidden');
-            }
-        });
-
-        function loadYouTubePlayer(el) {
-            var iframe = document.createElement('iframe');
-            iframe.setAttribute('src', 'https://www.youtube.com/embed/Vjzy2g_fDrA?autoplay=1');
-            iframe.setAttribute('frameborder', '0');
-            iframe.setAttribute('allow', 'autoplay; encrypted-media');
-            iframe.style.width = '100%';
-            iframe.style.height = '100%';
-            el.innerHTML = ''; // Clear the existing content
-            el.appendChild(iframe); // Append the iframe to the existing div
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const buttons = document.querySelectorAll('.keypad button');
-            const display = document.getElementById('display');
-            const sendButton = document.getElementById('send');
-            let lastKey = null;
-            let lastTime = 0;
-            let charIndex = 0;
-
-            buttons.forEach(button => {
-                button.addEventListener('click', () => {
-                    if (button.id === 'backspace') {
-                        // Handle backspace functionality
-                        display.textContent = display.textContent.slice(0, -1);
-                        return;
-                    }
-
-                    if (button.id === 'send') {
-                        // Send button functionality is handled separately
-                        return;
-                    }
-
-                    const now = Date.now();
-                    const chars = button.getAttribute('data-chars');
-
-                    if (lastKey === button && now - lastTime < 800) {
-                        // Cycle through the characters
-                        charIndex = (charIndex + 1) % chars.length;
-                    } else {
-                        // Start with the first character
-                        charIndex = 0;
-                    }
-
-                    const currentChar = chars[charIndex];
-                    if (display.textContent.length > 0 && lastKey === button &&
-                        now - lastTime <
-                        800) {
-                        // Replace the last character
-                        display.textContent = display.textContent.slice(0, -1) +
-                            currentChar;
-                    } else {
-                        // Add a new character
-                        display.textContent += currentChar;
-                    }
-
-                    lastKey = button;
-                    lastTime = now;
-                });
-            });
-
-            sendButton.addEventListener('click', () => {
-                // Clear the display when Send is clicked
-                display.textContent = '';
-            });
-        });
-    </script>
 </body>
 
 <footer>
-
+    <h3>Alcatel OT Easy | SheCodes One Page Challenge</h3>
+    <h4>My first mobile phone - Made by Kiree</h4>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const audioLabels = document.querySelectorAll('.audio-label');
+
+        audioLabels.forEach(label => {
+            const playBtn = label.querySelector('.play-btn');
+            const pauseBtn = label.querySelector('.pause-btn');
+            const audio = label.querySelector('audio');
+
+            playBtn.addEventListener('click', () => toggleAudio(playBtn, pauseBtn, audio));
+            pauseBtn.addEventListener('click', () => toggleAudio(playBtn, pauseBtn, audio));
+
+            audio.addEventListener('ended', () => resetButtons(playBtn, pauseBtn));
+        });
+
+        function toggleAudio(playBtn, pauseBtn, audio) {
+            if (audio.paused) {
+                audio.play();
+                playBtn.classList.add('hidden');
+                pauseBtn.classList.remove('hidden');
+            } else {
+                audio.pause();
+                resetButtons(playBtn, pauseBtn);
+            }
+        }
+
+        function resetButtons(playBtn, pauseBtn) {
+            playBtn.classList.remove('hidden');
+            pauseBtn.classList.add('hidden');
+        }
+    });
+
+    function loadYouTubePlayer(el) {
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('src', 'https://www.youtube.com/embed/Vjzy2g_fDrA?autoplay=1');
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allow', 'autoplay; encrypted-media');
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        el.innerHTML = ''; // Clear the existing content
+        el.appendChild(iframe); // Append the iframe to the existing div
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const buttons = document.querySelectorAll('.keypad button');
+        const display = document.getElementById('display');
+        const sendButton = document.getElementById('send');
+        let lastKey = null;
+        let lastTime = 0;
+        let charIndex = 0;
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                if (button.id === 'backspace') {
+                    // Handle backspace functionality
+                    display.textContent = display.textContent.slice(0, -1);
+                    return;
+                }
+
+                if (button.id === 'send') {
+                    // Send button functionality is handled separately
+                    return;
+                }
+
+                const now = Date.now();
+                const chars = button.getAttribute('data-chars');
+
+                if (lastKey === button && now - lastTime < 800) {
+                    // Cycle through the characters
+                    charIndex = (charIndex + 1) % chars.length;
+                } else {
+                    // Start with the first character
+                    charIndex = 0;
+                }
+
+                const currentChar = chars[charIndex];
+                if (display.textContent.length > 0 && lastKey === button &&
+                    now - lastTime <
+                    800) {
+                    // Replace the last character
+                    display.textContent = display.textContent.slice(0, -1) +
+                        currentChar;
+                } else {
+                    // Add a new character
+                    display.textContent += currentChar;
+                }
+
+                lastKey = button;
+                lastTime = now;
+            });
+        });
+
+        sendButton.addEventListener('click', () => {
+            // Clear the display when Send is clicked
+            display.textContent = '';
+        });
+    });
+</script>
 
 </html>
