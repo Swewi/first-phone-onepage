@@ -29,7 +29,6 @@
             background-position: fixed;
         }
 
-        /* Navbar styles */
         nav {
             background-color: #333399;
             border-radius: 5px;
@@ -78,7 +77,6 @@
             margin-bottom: 1rem;
         }
 
-        /* Section styles */
         section {
             margin-top: 1rem;
             padding: 2rem;
@@ -131,28 +129,50 @@
 
         .video-container {
             display: flex;
+            flex-direction: row;
             align-items: center;
-            justify-content: space-evenly;
+            justify-content: space-around;
             margin-top: 1rem;
+            border-radius: 5px;
         }
 
         .video-container h3 {
-            margin: 0 auto;
+            margin-bottom: 1rem;
             font-size: 2rem;
             color: #333399;
             text-shadow: 0 0 1px #FF6600;
         }
 
         .ytube {
-            display: flex;
-            justify-content: end;
-            width: 50%;
-            height: auto;
+            width: 100%;
+            max-width: 540px;
         }
 
-        .ytube iframe {
-            width: 70%;
-            height: 15rem;
+        .youtube-player {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 0 1px 10px rgba(145, 133, 133, 0.3) inset;
+        }
+
+        .youtube-player img,
+        .youtube-player iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         .features {
@@ -216,94 +236,103 @@
             margin-left: 1rem;
         }
 
-        #btn-1 {
+        .btn-1 {
             background-image: linear-gradient(to bottom right, #56C596, #7BE495, #CFF4D2);
             border-radius: 50px;
         }
 
-        #btn-1:hover {
+        .btn-1:hover {
             background-image: linear-gradient(to top left, #ffffff, #D1D1D1, #9B9B9B);
             border-radius: 50px;
         }
 
-        #btn-2 {
+        .btn-2 {
             background-image: linear-gradient(to bottom right, #FA897B, #FFDD94, #86E3CE);
             border-radius: 50px;
         }
 
-        #btn-2:hover {
+        .btn-2:hover {
             background-image: linear-gradient(to top left, #ffffff, #D1D1D1, #9B9B9B);
             border-radius: 50px;
         }
 
-        #btn-3 {
+        .btn-3 {
             background-image: linear-gradient(to bottom right, #CCABD8, #86E3CE);
             border-radius: 50px;
         }
 
-        #btn-3:hover {
+        .btn-3:hover {
             background-image: linear-gradient(to top left, #ffffff, #D1D1D1, #9B9B9B);
             border-radius: 50px;
         }
 
-        #btn-4 {
+        .btn-4 {
             background-image: linear-gradient(to bottom right, #D7E3EE, #ABD1DC, #7097A8);
             border-radius: 50px;
         }
 
-        #btn-4:hover {
+        .btn-4:hover {
             background-image: linear-gradient(to top left, #ffffff, #D1D1D1, #9B9B9B);
             border-radius: 50px;
         }
 
-        #btn-5 {
+        .btn-5 {
             background-image: linear-gradient(to bottom right, #C73866, #FD8F52, #FFDCA2);
             border-radius: 50px;
         }
 
-        #btn-5:hover {
+        .btn-5:hover {
             background-image: linear-gradient(to top left, #ffffff, #D1D1D1, #9B9B9B);
             border-radius: 50px;
         }
 
-        #btn-6 {
+        .btn-6 {
             background-image: linear-gradient(to bottom right, #FE676E, #FFDCA2);
             border-radius: 50px;
         }
 
-        #btn-6:hover {
+        .btn-6:hover {
             background-image: linear-gradient(to top left, #ffffff, #D1D1D1, #9B9B9B);
             border-radius: 50px;
         }
 
-        #btn-7 {
+        .btn-7 {
             background-image: linear-gradient(to bottom right, #E8B7D4, #7FACD6);
             border-radius: 50px;
         }
 
-        #btn-7:hover {
+        .btn-7:hover {
             background-image: linear-gradient(to top left, #ffffff, #D1D1D1, #9B9B9B);
             border-radius: 50px;
         }
 
-        #btn-8 {
+        .btn-8 {
             background-image: linear-gradient(to bottom right, #35BBCA, #D3DD18, #F8D90F);
             border-radius: 50px;
         }
 
-        #btn-8:hover {
+        .btn-8:hover {
             background-image: linear-gradient(to top left, #ffffff, #D1D1D1, #9B9B9B);
             border-radius: 50px;
         }
 
-        #btn-9 {
+        .btn-9 {
             background-image: linear-gradient(to bottom right, #7BE495, #329D9C);
             border-radius: 50px;
         }
 
-        #btn-9:hover {
+        .btn-9:hover {
             background-image: linear-gradient(to top left, #ffffff, #D1D1D1, #9B9B9B);
             border-radius: 50px;
+        }
+
+        .pause-btn {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .hidden {
+            display: none;
         }
 
         .play-btn {
@@ -416,7 +445,6 @@
         .up-arrow:hover svg {
             fill: #272a27;
         }
-
         /* Responsive styles */
         @media (max-width: 768px) {
             nav {
@@ -482,6 +510,34 @@
         }
 
         @media (max-width: 480px) {
+            .audio-container {
+                padding: 0.5rem;
+            }
+
+            .audio-player {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem 0.5rem;
+            }
+
+            .audio-label {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 0.25rem;
+            }
+
+            .audio-label p {
+                margin-left: 0;
+                margin-top: 0.5rem;
+                font-size: 0.8rem;
+            }
+
+            .play-btn,
+            .pause-btn {
+                width: 30px;
+                height: 30px;
+            }
+
             h1 {
                 font-size: 1.5rem;
             }
@@ -504,9 +560,13 @@
                 align-items: center;
             }
 
+            .video-container h3 {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+
             .ytube {
-                width: 100%;
-                margin-left: 0;
+                width: 90%;
             }
 
             .phone {
@@ -564,18 +624,13 @@
             <div class="video-container">
                 <h3>Original Advert from 1998</h3>
                 <div class="ytube">
-                    <div onclick="loadYouTubePlayer(this)"
-                        style="position: relative; width: 100%; padding-bottom: 56.25%; background-color: #000;">
-                        <img src="https://img.youtube.com/vi/Vjzy2g_fDrA/hqdefault.jpg" alt="Thumbnail"
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer;">
-                        <div
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
-                            <svg height="80px" width="80px" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    <div id="youtube-player" class="youtube-player" onclick="loadYouTubePlayer(this)">
+                        <img src="https://img.youtube.com/vi/Vjzy2g_fDrA/hqdefault.jpg" alt="Thumbnail">
+                        <div class="play-button">
+                            <svg height="80" width="80" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 64 64">
-                                <g>
-                                    <path style="fill:#FFFFFF;"
-                                        d="M32,0C14.355,0,0,14.355,0,32s14.355,32,32,32s32-14.355,32-32S49.645,0,32,0z M25,44V20l22,12L25,44z" />
-                                </g>
+                                <path fill="#e4d7d7"
+                                    d="M32,0C14.355,0,0,14.355,0,32s14.355,32,32,32s32-14.355,32-32S49.645,0,32,0z M25,44V20l22,12L25,44z" />
                             </svg>
                         </div>
                     </div>
@@ -610,13 +665,14 @@
     </section>
     <!-- Ringtones Section -->
     <section id="ringtones">
-        <h2>Ringtones</h2>
-        <p>Try one of the ringtones that defined an era...</p>
+        <h2>Try an era defining ringtone:</h2>
         <div class="audio-container">
             <div class="audio-player">
                 <div class="audio-label">
                     <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/141/967/original/play-button-svgrepo-com.png?1725373347"
-                        class="play-btn" id="btn-1" alt="play button">
+                        class="play-btn btn-1" alt="play button">
+                    <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/142/099/original/pause-circle-thin-svgrepo-com.png?1725450120"
+                        class="pause-btn hidden btn-1" id="pause-1" alt="pause button">
                     <audio class="listen" preload="none"
                         src="https://www.mobiles24.co/metapreview.php?id=642179&amp;cat=3&amp;h=13806849"
                         data-dlid="642179" data-gacat="sm" id="audio2">
@@ -625,7 +681,9 @@
                 </div>
                 <div class="audio-label">
                     <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/141/967/original/play-button-svgrepo-com.png?1725373347"
-                        class="play-btn" id="btn-2" alt="play button">
+                        class="play-btn btn-2" alt="play button">
+                    <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/142/099/original/pause-circle-thin-svgrepo-com.png?1725450120"
+                        class="pause-btn btn-2 hidden" id="pause-1" alt="pause button">
                     <audio class="listen" preload="none"
                         src="https://www.mobiles24.co/metapreview.php?id=642184&amp;cat=3&amp;h=13806956"
                         data-dlid="642184" data-gacat="sm" id="audio7">
@@ -634,7 +692,9 @@
                 </div>
                 <div class="audio-label">
                     <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/141/967/original/play-button-svgrepo-com.png?1725373347"
-                        class="play-btn" id="btn-3" alt="play button">
+                        class="play-btn btn-3" alt="play button">
+                    <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/142/099/original/pause-circle-thin-svgrepo-com.png?1725450120"
+                        class="pause-btn hidden btn-3" id="pause-1" alt="pause button">
                     <audio class="listen" preload="none"
                         src="https://www.mobiles24.co/metapreview.php?id=642171&amp;cat=3&amp;h=13806677"
                         data-dlid="642171" data-gacat="sm" id="audio9">
@@ -643,7 +703,9 @@
                 </div>
                 <div class="audio-label">
                     <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/141/967/original/play-button-svgrepo-com.png?1725373347"
-                        class="play-btn" id="btn-4" alt="play button">
+                        class="play-btn btn-4" alt="play button">
+                    <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/142/099/original/pause-circle-thin-svgrepo-com.png?1725450120"
+                        class="pause-btn hidden btn-4" id="pause-1" alt="pause button">
                     <audio class="listen" preload="none"
                         src="https://www.mobiles24.co/metapreview.php?id=642199&amp;cat=3&amp;h=13807279"
                         data-dlid="642199" data-gacat="sm" id="audio24">
@@ -652,7 +714,9 @@
                 </div>
                 <div class="audio-label">
                     <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/141/967/original/play-button-svgrepo-com.png?1725373347"
-                        class="play-btn" id="btn-5" alt="play button">
+                        class="play-btn btn-5" alt="play button">
+                    <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/142/099/original/pause-circle-thin-svgrepo-com.png?1725450120"
+                        class="pause-btn hidden btn-5" id="pause-1" alt="pause button">
                     <audio class="listen" preload="none"
                         src="https://www.mobiles24.co/metapreview.php?id=642195&amp;cat=3&amp;h=13807193"
                         data-dlid="642195" data-gacat="sm" id="audio20">
@@ -661,7 +725,9 @@
                 </div>
                 <div class="audio-label">
                     <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/141/967/original/play-button-svgrepo-com.png?1725373347"
-                        class="play-btn" id="btn-6" alt="play button">
+                        class="play-btn btn-6" alt="play button">
+                    <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/142/099/original/pause-circle-thin-svgrepo-com.png?1725450120"
+                        class="pause-btn hidden btn-6" id="pause-1" alt="pause button">
                     <audio class="listen" preload="none"
                         src="https://www.mobiles24.co/metapreview.php?id=642191&amp;cat=3&amp;h=13807107"
                         data-dlid="642191" data-gacat="sm" id="audio16">
@@ -670,7 +736,9 @@
                 </div>
                 <div class="audio-label">
                     <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/141/967/original/play-button-svgrepo-com.png?1725373347"
-                        class="play-btn" id="btn-7" alt="play button">
+                        class="play-btn btn-7" alt="play button">
+                    <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/142/099/original/pause-circle-thin-svgrepo-com.png?1725450120"
+                        class="pause-btn hidden btn-7" id="pause-1" alt="pause button">
                     <audio class="listen" preload="none"
                         src="https://www.mobiles24.co/metapreview.php?id=649948&amp;cat=3&amp;h=13973882"
                         data-dlid="649948" data-gacat="sm" id="audio8">
@@ -679,7 +747,9 @@
                 </div>
                 <div class="audio-label">
                     <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/141/967/original/play-button-svgrepo-com.png?1725373347"
-                        class="play-btn" id="btn-8" alt="play button">
+                        class="play-btn btn-8" alt="play button">
+                    <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/142/099/original/pause-circle-thin-svgrepo-com.png?1725450120"
+                        class="pause-btn hidden btn-8" id="pause-1" alt="pause button">
                     <audio class="listen" preload="none"
                         src="https://www.mobiles24.co/metapreview.php?id=651667&amp;cat=3&amp;h=14010841"
                         data-dlid="651667" data-gacat="sm" id="audio0">
@@ -688,7 +758,9 @@
                 </div>
                 <div class="audio-label">
                     <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/141/967/original/play-button-svgrepo-com.png?1725373347"
-                        class="play-btn" id="btn-9" alt="play button">
+                        class="play-btn btn-9" alt="play button">
+                    <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/142/099/original/pause-circle-thin-svgrepo-com.png?1725450120"
+                        class="pause-btn hidden btn-9" id="pause-1" alt="pause button">
                     <audio class="listen" preload="none"
                         src="https://www.mobiles24.co/metapreview.php?id=650257&amp;cat=3&amp;h=13980526"
                         data-dlid="650257" data-gacat="sm" id="audio21">
@@ -764,24 +836,34 @@
     </a>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const playButtons = document.querySelectorAll('.audio-player img');
+            const audioLabels = document.querySelectorAll('.audio-label');
 
-            playButtons.forEach(button => {
-                button.addEventListener('click', (e) => {
-                    e.preventDefault(); // Prevent the default anchor behavior
-                    const audio = button.nextElementSibling; // Get the associated audio element
+            audioLabels.forEach(label => {
+                const playBtn = label.querySelector('.play-btn');
+                const pauseBtn = label.querySelector('.pause-btn');
+                const audio = label.querySelector('audio');
 
-                    if (audio.paused) {
-                        audio.play();
-                        button.classList.add(
-                            'playing');
-                    } else {
-                        audio.pause();
-                        button.classList.remove(
-                            'playing');
-                    }
-                });
+                playBtn.addEventListener('click', () => toggleAudio(playBtn, pauseBtn, audio));
+                pauseBtn.addEventListener('click', () => toggleAudio(playBtn, pauseBtn, audio));
+
+                audio.addEventListener('ended', () => resetButtons(playBtn, pauseBtn));
             });
+
+            function toggleAudio(playBtn, pauseBtn, audio) {
+                if (audio.paused) {
+                    audio.play();
+                    playBtn.classList.add('hidden');
+                    pauseBtn.classList.remove('hidden');
+                } else {
+                    audio.pause();
+                    resetButtons(playBtn, pauseBtn);
+                }
+            }
+
+            function resetButtons(playBtn, pauseBtn) {
+                playBtn.classList.remove('hidden');
+                pauseBtn.classList.add('hidden');
+            }
         });
 
         function loadYouTubePlayer(el) {
@@ -791,7 +873,8 @@
             iframe.setAttribute('allow', 'autoplay; encrypted-media');
             iframe.style.width = '100%';
             iframe.style.height = '100%';
-            el.parentNode.replaceChild(iframe, el);
+            el.innerHTML = ''; // Clear the existing content
+            el.appendChild(iframe); // Append the iframe to the existing div
         }
 
         document.addEventListener('DOMContentLoaded', () => {
