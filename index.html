@@ -454,10 +454,21 @@
             <div class="video-container">
                 <h3>Original Advert from 1998</h3>
                 <div class="ytube">
-                    <iframe src="https://www.youtube.com/embed/Vjzy2g_fDrA" title="Alcatel One touch easy Werbung 1998"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div onclick="loadYouTubePlayer(this)"
+                        style="position: relative; width: 100%; padding-bottom: 56.25%; background-color: #000;">
+                        <img src="https://img.youtube.com/vi/Vjzy2g_fDrA/hqdefault.jpg" alt="Thumbnail"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer;">
+                        <div
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+                            <svg height="80px" width="80px" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 64 64">
+                                <g>
+                                    <path style="fill:#FFFFFF;"
+                                        d="M32,0C14.355,0,0,14.355,0,32s14.355,32,32,32s32-14.355,32-32S49.645,0,32,0z M25,44V20l22,12L25,44z" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="features">
@@ -599,7 +610,9 @@
         <div class="phone">
             <div id="display" class="screen"></div>
             <div class="keypad">
-                <button data-chars="1">1</button>
+                <button data-chars="1">
+                    <span class="num">1</span>
+                </button>
                 <button data-chars="ABC2">
                     <span class="num">2</span>
                     <span class="charch">ABC</span>
@@ -637,10 +650,14 @@
                 </button>
                 <button data-chars=" 0">
                     <span class="num">0</span>
-                    <span class="charch">___</span>
+                    <span class="charch">_</span>
                 </button>
-                <button data-chars="#">#</button>
-                <button id="backspace">⟵</button>
+                <button data-chars="#">
+                    <span class="num">#</span>
+                </button>
+                <button id="backspace">
+                    <span class="num">⟵</span>
+                </button>
                 <button id="send">Send</button>
             </div>
         </div>
@@ -663,15 +680,26 @@
                     if (audio.paused) {
                         audio.play();
                         button.classList.add(
-                            'playing'); // Add a class to indicate that the audio is playing
+                            'playing');
                     } else {
                         audio.pause();
                         button.classList.remove(
-                            'playing'); // Remove the class when the audio is paused
+                            'playing');
                     }
                 });
             });
         });
+
+        function loadYouTubePlayer(el) {
+            var iframe = document.createElement('iframe');
+            iframe.setAttribute('src', 'https://www.youtube.com/embed/Vjzy2g_fDrA?autoplay=1');
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow', 'autoplay; encrypted-media');
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            el.parentNode.replaceChild(iframe, el);
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const buttons = document.querySelectorAll('.keypad button');
             const display = document.getElementById('display');
